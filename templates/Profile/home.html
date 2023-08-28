@@ -12,12 +12,12 @@
                     <div class="user-profile">
                         <div class="user-top bg-red">
                             <div class="user-img">
-                                <img src="{% static 'Assects\Img\Profile\user-pic.png' %}" alt="user" class="b-rd-50">
+                                <img id="profile_image" src="{% static 'Assects\Img\Profile\user-pic.png' %}" alt="user" class="b-rd-50" style="height: 110px; width: 110px;">
                             </div>
                         </div>
                         <div class="user-bottom bg-white t-c">
-                            <h3 class="t-capitalize">john doe</h3>
-                            <span class="c-mediumGray">Graphic Designer at Self Employed</span>
+                            <h3 class="t-capitalize" id="fullname"></h3>
+                            <span class="c-mediumGray" id="profession"></span>
                         </div>
                         <ul class="d-flex flex-d-column align-items-center t-c">
                             <li class="w-100">

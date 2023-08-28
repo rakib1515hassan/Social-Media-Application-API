@@ -88,7 +88,7 @@
                 </nav>
                 <div class="user-info d-flex align-items-center justify-content-space-between">
                     <div class="info d-flex align-items-center">
-                        <img src="{% static 'Assects\Img\Profile\user-pic.png' %}" alt="user" onclick="toggleMenu()">
+                        <img id="nav_pic" src="{% static 'Assects\Img\Profile\user-pic.png' %}" alt="user" onclick="toggleMenu()" style="height: 30px; width: 30px;">
                         <!-- <span class="c-white">John</span> -->
 
                         <div class="sub-menu-wrap" id="subMenu">
@@ -180,14 +180,14 @@
         const csrfToken = "{{ csrf_token }}";
     </script> -->
     <script src="{% static 'Assects\Js\token.js' %}" type="module"></script>
-
     <script src="{% static 'Assects\Js\Accounts\logout.js' %}" type="module"></script>
+    <script src="{% static 'Assects\Js\Profile\profile_info_GET.js' %}" type="module"></script>
 
     <script>
         let subMenu = document.getElementById('subMenu');
 
         function toggleMenu(){
-            console.log("Click on the Toggle.")
+            // console.log("Click on the Toggle.")
             subMenu.classList.toggle("open-menu")
         }
     </script>

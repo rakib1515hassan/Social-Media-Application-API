@@ -28,7 +28,7 @@ class User(AbstractUser):
     profession  = models.CharField(max_length=20, null=True, blank=True)
     cover_pic   = models.ImageField(upload_to="CoverImage/", null=True, blank=True)
 
-    USERNAME_FIELD = 'email' ## এটি Django user name হিসেবে set হবে
+    USERNAME_FIELD = 'email' ## এটি Django username হিসেবে set হবে
     REQUIRED_FIELDS = [] 
 
     objects = CustomUserManager()

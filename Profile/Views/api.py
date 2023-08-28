@@ -14,19 +14,19 @@ from rest_framework.permissions import (
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 ## NOTE All Serializers
-from Profile.Serializers.ProfileSerializers import UserProfileSerializer
+from Profile.Serializers.ProfileSerializers import UserProfileSerializer_GET
 
 
 ##_________________________________________________________________________________________
 ## NOTE ------------------------( User Profile View )--------------------------------------
 ## URL = ( http://127.0.0.1:8000/profile/api/profile/ )
 
-class UserProfileView(APIView):
+class UserProfileView_GET(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request, format=None):
-        serializer = UserProfileSerializer(request.user)
+        serializer = UserProfileSerializer_GET(request.user)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     

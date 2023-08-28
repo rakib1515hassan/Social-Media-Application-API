@@ -43,7 +43,7 @@ class UserProfilePicSerializer(serializers.ModelSerializer):
 
 
 
-class UserProfileSerializer(serializers.ModelSerializer):
+class UserProfileSerializer_GET(serializers.ModelSerializer):
     userprofile_pic      = UserProfilePicSerializer(      many=True, read_only=True)
     user_address         = User_AddressSerializer(        many=True, read_only=True)
     user_educationl_info = User_Educationl_InfoSerializer(many=True, read_only=True)

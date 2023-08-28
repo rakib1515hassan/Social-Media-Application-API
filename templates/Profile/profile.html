@@ -22,7 +22,7 @@
                 <div class="box box-1">
                     <div class="user-profile bg-white w-100 t-c">
                         <div class="user-pro-img p-relative t-c w-100">
-                            <img src="{% static 'Assects\Img\Profile\user-pro-img.png' %}" class="b-rd-50">
+                            <img id="profile_image" src="{% static 'Assects\Img\Profile\prfile_pic.jpg' %}" class="b-rd-50" style="width: 200px; height: 200px;">
                             <div class="add-pic p-absolute">
                                 <input type="file" id="pic">
                                 <label for="pic" class="">
@@ -162,9 +162,9 @@
             </div>
             <div class="middle">
                 <div class="user-tab-sec">
-                    <h3 class="c-black t-capitalize">john doe</h3>
+                    <h3 class="c-black t-capitalize" id="fullname"></h3>
                     <div class="user-tab-details">
-                        <span class="t-capitalize c-mediumGray">graphic designer at self employed</span>
+                        <span class="t-capitalize c-mediumGray" id="profession"></span>
                         <ul class="d-flex align-items-center">
                             <li><i class="fs-16 fas fa-star"></i></li>
                             <li><i class="fs-16 fas fa-star"></i></li>
