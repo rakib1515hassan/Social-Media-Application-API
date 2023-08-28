@@ -1,0 +1,53 @@
+1. To Create requirements:
+
+    	pip3 freeze > requirements.txt 
+
+
+2. pip Upgrade: 
+
+	python.exe -m pip install --upgrade pip
+
+
+3. To Install requirements:
+
+	pip install -U -r requirements.txt
+
+
+-----------------------------( Dump All data )----------------------------------------
+4. Dump All data
+	
+	python manage.py dumpdata > BackupData.json
+
+5. Dump a individual table data from database ( JSON, XML, or YAML format. )
+
+	i. JSON Format:-
+		python manage.py dumpdata app_name.TableName > data.json
+		python manage.py dumpdata app_name.TableName1 app_name.TableName2 > data.json
+		python manage.py dumpdata app_name --output=data.json
+		python manage.py dumpdata app_name > data.json
+
+
+
+	ii. XML Format:-
+		To dump data in XML format, you can use the django-admin-dbxml package. 
+
+		pip install django-admin-dbxml
+		python manage.py dumpdata app_name.TableName --output=data.xml --format=xml
+		python manage.py dumpdata app_name.TableName1 app_name.TableName2 --output=data.xml --format=xml
+
+	iii. YAML Format:- 
+		To dump data in YAML format, you can use the pyyaml package. Install it using:
+
+		pip install pyyaml
+		python manage.py dumpdata app_name.TableName --format=yaml > data.yaml
+		python manage.py dumpdata app_name.TableName1 app_name.TableName2 --format=yaml > data.yaml
+
+6. Loaddat All data In Database
+
+	python manage.py loaddata BackupData.json
+
+	python manage.py loaddata data.xml --format=xml
+	python manage.py loaddata data.yaml --format=yaml
+
+
+-----------------------------------------------------------------------------------

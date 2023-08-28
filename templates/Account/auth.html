@@ -1,0 +1,169 @@
+{% extends 'Account\index.html' %}
+{% load static %}
+{% block title %}Authentication{% endblock title %}
+{% block css %} {% endblock css %}
+
+{% block body %} 
+<div class="container wrapper d-flex align-items-center justify-content-center">
+    <div class="sign-in-page bg-white b-rd-3 d-l-flex">
+        <div class="header p-relative">
+            <img src="{% static 'Assects\Img\Profile\cm-logo.png' %}" alt="logo">
+            <p>
+                Workwise, is a global freelancing platform and social networking where businesses and independent
+                professionals connect and collaborate remotely
+            </p>
+            <div class="right d-none d-l-block">
+                <img src="{% static 'Assects\Img\Profile\cm-main-img.png' %}" alt="main">
+            </div>
+        </div>
+        <div class="main p-relative">
+            <div class="switcher d-flex align-items-center">
+                <a href="#" class="sign-in c-black fs-14 active" data-section="sign-in-sec">Sign in</a>
+                <a href="#" class="sign-up c-black fs-14" data-section="sign-up-sec">Sign up</a>
+            </div>
+
+            <!-------------( Sign in Form Start )--------------->
+            <div class="sec sign-in-sec d-none active">
+                <h3 class="c-balck p-relative">Sign in</h3>
+                <div id="alart_msg" style="margin-top: -10px;!important"></div>
+                {% include 'message.html' %}
+
+                <form id="login-form" class="d-flex flex-d-column" method="POST">
+                    {% csrf_token %}
+                    
+                    <div class="form-group">
+                        <div class="inner-input fs-14 lightGray d-flex align-items-center">
+                            <i class="fas fa-user"></i>
+                            <input type="email" placeholder="Email" id="l_email" name="l_email" class="outline-0 b-0 w-100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <div class="inner-input fs-14 lightGray d-flex align-items-center">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Password" id="l_password" name="l_password" class="outline-0 b-0 w-100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="inner-input fs-14 lightGray d-flex align-items-center justify-content-space-between">
+                            <div class="check d-flex align-items-center">
+                                <input type="checkbox" name="" id="rm" class="d-none">
+                                <label for="rm">
+                                    <span class="p-relative b-rd-50 pointer"></span>
+                                </label>
+                                <small class="c-black fs-14">Remember me</small>
+                            </div>
+                            <a href="{% url 'takeEmail_f_password' %}" class="t-capitalize c-black fs-14">forget password?</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn bg-red" name="login-form">Sign in</button>
+                    </div>
+                </form>
+                
+
+                <div class="login-resources">
+                    <h4 class="t-uppercase c-black">login via social account</h4>
+                    <div class="social d-flex align-items-center flex-wrap-wrap flex-d-xl-column">
+                        <a href="#" class="t-capitalize c-white d-flex align-items-center b-rd-3">
+                            <i class="fab fa-facebook-f"></i>
+                            login via facebook
+                        </a>
+                        <a href="#" class="t-capitalize c-white d-flex align-items-center b-rd-3">
+                            <i class="fab fa-twitter"></i>
+                            login via twitter
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-------------( Sign in Form End )--------------->
+
+
+
+            <!-------------( Sign up Form Start )--------------->
+            <div class="sec sign-up-sec d-none">
+                <h3 class="c-balck p-relative">Sign up</h3>
+                <div id="alart_msg_2" style="margin-top: -10px;!important"></div>
+
+                <form class="d-flex flex-d-column" id="register-form">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <div class="inner-input fs-14 lightGray d-flex align-items-center">
+                            <i class="fas fa-at"></i>
+                            <input type="email" id="r_email" placeholder="email@example.com" class="outline-0 b-0 w-100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="inner-input fs-14 lightGray d-flex align-items-center">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="r_f_name" placeholder="First Name" class="outline-0 b-0 w-100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="inner-input fs-14 lightGray d-flex align-items-center">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="r_l_name" placeholder="Last Name" class="outline-0 b-0 w-100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="inner-input fs-14 lightGray d-flex align-items-center">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="r_phone" placeholder="Phone Number" class="outline-0 b-0 w-100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group"></div>
+
+                    <div class="form-group">
+                        <div class="inner-input lightGray d-flex align-items-center">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="r_password" placeholder="Password" class="outline-0 b-0 w-100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group"></div>
+
+                    <div class="form-group">
+                        <div class="inner-input lightGray d-flex align-items-center">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="r_c_password" placeholder="Confirm Password" class="outline-0 b-0 w-100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="inner-input lightGray d-flex align-items-center justify-content-space-between">
+                            <div class="check d-flex align-items-center">
+                                <input type="checkbox" id="confirm" class="d-none">
+                                <label for="confirm">
+                                    <span class="p-relative b-rd-50 pointer"></span>
+                                </label>
+                                <small class="c-black fs-14">Yes, I agree to the Terms & Conditions.</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn bg-red t-capitalize">get started</button>
+                    </div>
+                </form>
+
+
+            </div>
+            <!-------------( Sign up Form End )--------------->
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock body %}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap 4.6 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'Assects\CSS\Profile\general.css' %}">
+    <link rel="stylesheet" href="{% static 'Assects\CSS\Profile\style.css' %}">
+
+    <title>{% block title %} {% endblock title %}</title>
+
+ 
+    {% block css %} 
+
+
+    {% endblock css %}
+</head>
+
+<body class="bg-gray">
+    <header class="bg-red" id="header">
+        <div class="container">
+            <div class="header-area d-m-flex justify-content-space-between">
+                <div class="header-top d-m-flex">
+                    <div class="logo t-c">
+                        <img src="{% static 'Assects/Img/Profile/logo.png' %}" alt="logo">
+                    </div>
+                    <div class="search-bar t-c">
+                        <form action="#" class="p-relative">
+                            <input type="text" name="search" placeholder="Search..."
+                                class="bg-white c-lightGray outline-0 b-0 b-rd-3 w-100">
+                            <button type="submit"
+                                class="bg-gray c-red outline-0 b-0 b-t-r-3 b-b-r-3 pointer p-absolute">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <nav class="bg-red p-xl-relative" id="navbar">
+                    <ul class="d-xl-flex">
+                        <li>
+                            <a href="{% url 'home' %}" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                <i class="fas fa-home"></i>
+                                home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                <i class="fas fa-building"></i>
+                                companies
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                <i class="fas fa-puzzle-piece"></i>
+                                projects
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'profile' %}" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                <i class="fas fa-users"></i>
+                                profiles
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                <i class="fas fa-briefcase"></i>
+                                jobs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                <i class="fas fa-envelope"></i>
+                                messages
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                <i class="far fa-bell"></i>
+                                notification
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="user-info d-flex align-items-center justify-content-space-between">
+                    <div class="info d-flex align-items-center">
+                        <img src="{% static 'Assects\Img\Profile\user-pic.png' %}" alt="user" onclick="toggleMenu()">
+                        <!-- <span class="c-white">John</span> -->
+
+                        <div class="sub-menu-wrap" id="subMenu">
+                            <div class="sub-menu">
+                                <div class="user-info">
+                                    <img src="{% static 'Assects\Img\toggle\user.png' %}" alt="">
+                                    <h3>Md Rakib Hassan</h3>
+                                </div><hr>
+                
+                                <a href="#" class="sub-menu-link">
+                                    <img src="{% static 'Assects\Img\toggle\profile.png' %}" alt="">
+                                    <p>Edit Profile</p>
+                                    <!-- <span>></span> -->
+                                </a>
+                
+                                <a href="#" class="sub-menu-link">
+                                    <img src="{% static 'Assects\Img\toggle\setting.png' %}" alt="">
+                                    <p>Setting and Privacy</p>
+                                    <!-- <span>></span> -->
+                                </a>
+                
+                                <a href="#" class="sub-menu-link">
+                                    <img src="{% static 'Assects\Img\toggle\help.png' %}" alt="">
+                                    <p>Help and Support</p>
+                                    <!-- <span>></span> -->
+                                </a>
+                
+                                <a href="" id="logout_link" class="sub-menu-link">
+                                    <img src="{% static 'Assects\Img\toggle\profile.png' %}" alt="">
+                                    <p>Logout</p>
+                                    <!-- <span>></span> -->
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <i class="fas fa-bars c-white pointer d-xl-none"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div>
+        {% block body %} 
+
+
+
+
+
+
+
+    
+        {% endblock body %}
+    </div>
+    <footer class="bg-white">
+        <div class="footer-sec">
+            <div class="container d-flex align-items-center justify-content-center flex-d-column flex-d-xl-row">
+                <ul class="d-flex align-items-center justify-content-center flex-wrap-wrap">
+                    <li><a href="#" class="fs-14 c-lightGray t-capitalize">help center</a></li>
+                    <li><a href="#" class="fs-14 c-lightGray t-capitalize">about</a></li>
+                    <li><a href="#" class="fs-14 c-lightGray t-capitalize">privacy policy</a></li>
+                    <li><a href="#" class="fs-14 c-lightGray t-capitalize">community guidelines</a></li>
+                    <li><a href="#" class="fs-14 c-lightGray t-capitalize">cookies policy</a></li>
+                    <li><a href="#" class="fs-14 c-lightGray t-capitalize">career</a></li>
+                    <li><a href="#" class="fs-14 c-lightGray t-capitalize">forum</a></li>
+                    <li><a href="#" class="fs-14 c-lightGray t-capitalize">language</a></li>
+                    <li><a href="#" class="fs-14 c-lightGray t-capitalize">copyright policy</a></li>
+                </ul>
+                <p class="c-lightGray t-c">&copy;Copyright 2022</p>
+                <img src="img/logo2.png" alt="logo">
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://kit.fontawesome.com/9e5ba2e3f5.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap 4.6 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Ajax -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+
+    <!-- <script>
+        const csrfToken = "{{ csrf_token }}";
+    </script> -->
+    <script src="{% static 'Assects\Js\token.js' %}" type="module"></script>
+
+    <script src="{% static 'Assects\Js\Accounts\logout.js' %}" type="module"></script>
+
+    <script>
+        let subMenu = document.getElementById('subMenu');
+
+        function toggleMenu(){
+            console.log("Click on the Toggle.")
+            subMenu.classList.toggle("open-menu")
+        }
+    </script>
+
+    {% block js %} 
+
+
+    {% endblock js %}
+
+</body>
+
+</html>

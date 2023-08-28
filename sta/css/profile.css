@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    display: flex;
+    background-color: #f8f8f8;
+    min-height: 100vh;
+}
+
+.profile-sidebar {
+    background-color: #333;
+    color: white;
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.profile-menu {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.profile-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.profile-menu a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.profile-menu a:hover {
+    color: #ddd;
+}
+
+.profile-content {
+    flex: 2;
+    padding: 2rem;
+}
+
+.profile-header {
+    margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+    font-size: 2.5rem;
+}
+
+/* Add more styling for profile details, headers, and other content as needed */

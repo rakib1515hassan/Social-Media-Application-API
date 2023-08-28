@@ -1,0 +1,59 @@
+{% extends 'Account\index.html' %}
+{% load static %}
+{% block title %} OTP | Send {% endblock title %}
+
+{% block css %}
+<!-- Bootstrap 4.6 -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
+{% endblock css %}
+
+{% block body %}
+<div class="container wrapper d-flex align-items-center justify-content-center">
+    <div class="sign-in-page bg-white b-rd-3 d-l-flex" style="height: 500px;!important">
+        <div class="header p-relative">
+            <img src="{% static 'Assects\Img\Profile\cm-logo.png' %}" alt="logo">
+            <p>
+                Workwise, is a global freelancing platform and social networking where businesses and independent
+                professionals connect and collaborate remotely
+            </p>
+            <div class="right d-none d-l-block">
+                <img src="{% static 'Assects\Img\Profile\cm-main-img.png' %}" alt="main">
+            </div>
+        </div>
+        <div class="main p-relative">
+            <div>
+                <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Recovery Account</h1>
+            </div>
+
+            <!-------------( Sign in Form Start )--------------->
+            <div class="sec sign-in-sec d-none active">
+                <h3 class="c-balck p-relative">OTP Send</h3>
+                <div id="alart_msg" style="margin-top: -10px;!important"></div>
+
+                <form id="take_email" class="d-flex flex-d-column">
+                    {% csrf_token %}
+                    
+                    <div class="form-group">
+                        <div class="inner-input fs-14 lightGray d-flex align-items-center">
+                            <i class="fas fa-user"></i>
+                            <input type="email" placeholder="Email" id="email_address" class="outline-0 b-0 w-100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn" style="background-color: rgb(50, 104, 221);">Send</button>
+
+                        <a class="btn bg-red" style="margin-left: 30px;" href="{% url 'login' %}">Cancel</a>
+                    </div>
+                </form>
+                
+
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+
+{% block js %}
+    <script src="{% static 'Assects\Js\Accounts\ForgetPass\take_email.js' %}" type="module"></script>
+{% endblock js %}

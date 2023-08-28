@@ -1,0 +1,87 @@
+{% extends 'Account\index.html' %}
+{% load static %}
+{% block title %} OTP | Verify {% endblock title %}
+{% block css %} 
+<style>
+    .forgot-password{
+        color: rgb(21, 0, 255);
+    }
+    .forgot-password:hover{
+        color: rgb(215, 26, 61)
+    }
+</style>
+
+
+{% endblock css %}
+
+{% block body %}
+<div class="container wrapper d-flex align-items-center justify-content-center">
+    <div class="sign-in-page bg-white b-rd-3 d-l-flex" style="height: 500px;!important">
+        <div class="header p-relative">
+            <img src="{% static 'Assects\Img\Profile\cm-logo.png' %}" alt="logo">
+            <p>
+                Workwise, is a global freelancing platform and social networking where businesses and independent
+                professionals connect and collaborate remotely
+            </p>
+            <div class="right d-none d-l-block">
+                <img src="{% static 'Assects\Img\Profile\cm-main-img.png' %}" alt="main">
+            </div>
+        </div>
+        <div class="main p-relative">
+            <div>
+                <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Recovery Account</h1>
+            </div>
+
+            <!-------------( Sign in Form Start )--------------->
+            <div class="sec sign-in-sec d-none active">
+                <h3 class="c-balck p-relative">OTP Verify</h3>
+                <div id="alart_msg" style="margin-top: -10px;!important"></div>
+
+                <form id="otp-varify" class="d-flex flex-d-column">
+                    {% csrf_token %}
+                    
+                    <div class="form-group">
+                        <div class="inner-input fs-14 lightGray d-flex align-items-center">
+                            <i class="fas fa-user"></i>
+                            <input type="number" placeholder="OTP" id="otp" class="outline-0 b-0 w-100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn" style="background-color: rgb(50, 104, 221);">Verify</button>
+
+                        <a class="btn bg-red" style="margin-left: 30px;" href="{% url 'takeEmail_f_password' %}">Back</a>
+                    </div>
+                </form>
+
+                <!-- Resend OTP -->
+                <div>
+                    <div class="d-flex justify-content-center" style="margin-top: 30px;">
+                        <h2 id="timer"></h2>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div style="text-align: center; margin-top: 20px;">
+                                    <a href="#" tabindex="5" class="forgot-password" id="resend_OTP">
+                                        <b style="font-size: 15px;">Resend OTP?</b>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+
+{% block js %}
+    <script src="{% static 'Assects\Js\Accounts\ForgetPass\otp_verify.js' %}" type="module"></script>
+    <script src="{% static 'Assects\Js\Accounts\ForgetPass\resend_OTP.js' %}" type="module"></script>
+    <script src="{% static 'Assects\Js\Accounts\ForgetPass\timer.js' %}" ></script>
+{% endblock js %}

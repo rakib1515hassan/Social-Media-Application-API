@@ -1,0 +1,47 @@
+from django.contrib.auth.models import User
+from django.db import models
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # Add other user-related fields as needed
+
+class UploadedImage(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='images/')
+    is_profile_picture = models.BooleanField(default=False)
+
+
+
+
+
+from django.shortcuts import render, redirect
+from .models import UploadedImage
+
+def image_selection_view(request):
+    if request.method == 'POST':
+        selected_image_id = request.POST.get('selected_image')
+        if selected_image_id:
+            selected_image = UploadedImage.objects.get(pk=selected_image_id, user=request.user)
+            
+            # Update the selected image as the profile picture
+            UploadedImage.objects.filter(user=request.user, is_profile_picture=True).update(is_profile_picture=False)
+            selected_image.is_profile_picture = True
+            selected_image.save()
+
+    images = UploadedImage.objects.filter(user=request.user)
+    return render(request, 'image_selection.html', {'images': images})
+
+
+
+<form method="post">
+    {% csrf_token %}
+    {% for image in images %}
+        <label>
+            <input type="radio" name="selected_image" value="{{ image.id }}"
+                   {% if image.is_profile_picture %} checked {% endif %}>
+            <img src="{{ image.image.url }}" alt="Image">
+        </label>
+    {% endfor %}
+    <button type="submit">Select Profile Picture</button>
+</form>
+
