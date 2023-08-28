@@ -406,3 +406,10 @@ p {
     font-weight: 600;
 }
 /* Toggle end */
+
+
+/* Profile about font */
+.p_font_siz{
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 17px;
+}

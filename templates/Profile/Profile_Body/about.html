@@ -1,0 +1,53 @@
+{% extends 'Profile\profile.html' %}
+{% load static %}
+
+{% block p_about %} active {% endblock p_about %}
+{% block profile_body %}
+<div class="product-feed-tab current" id="about">
+    <div class="card">
+        <div class="card-header text-white" style="background: rgb(55, 63, 214);">
+          <h2 class="larger-font">
+            <i class="fa-solid fa-user mr-3"></i>
+            Profile Information
+          </h2>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <th class="p_font_siz" scope="row">First Name</th>
+                <td class="p_font_siz">Md Rakib</td>
+              </tr>
+              <tr>
+                <th class="p_font_siz"  scope="row">Last Name</th>
+                <td class="p_font_siz" >Hassan</td>
+              </tr>
+              <tr>
+                <th class="p_font_siz"  scope="row">Email</th>
+                <td class="p_font_siz" >rakib@gmail.com</td>
+              </tr>
+              <tr>
+                <th class="p_font_siz"  scope="row">Phone</th>
+                <td class="p_font_siz" >01515612682</td>
+              </tr>
+              <tr>
+                <th class="p_font_siz"  scope="row">Date of Birth</th>
+                <td class="p_font_siz" >1995-10-20</td>
+              </tr>
+              <tr>
+                <th class="p_font_siz"  scope="row">Profession</th>
+                <td class="p_font_siz" >Web Developer</td>
+              </tr>
+              <tr>
+                <th class="p_font_siz"  scope="row">Gender</th>
+                <td class="p_font_siz" >Male</td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="btn btn-sm" style="background: rgb(217, 73, 73); color: aliceblue; padding: 8px 25px;">Edit</button>
+        </div>
+    </div>
+</div>
+
+
+{% endblock profile_body %}

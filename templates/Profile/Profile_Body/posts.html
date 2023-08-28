@@ -1,0 +1,250 @@
+{% extends 'Profile\profile.html' %}
+{% load static %}
+
+{% block p_post %} active {% endblock p_post %}
+{% block profile_body %}
+<!-- <div class="product-feed-tab current" id="post"> -->
+<div class="product-feed-tab current" id="post">
+    <div class="box bg-white">
+        <div class="post-section">
+            <div class="post-topbar d-flex align-items-center justify-content-space-between">
+                <div class="user-info d-flex align-items-center">
+                    <img src="{% static 'Assects\Img\Profile\user-pic.png' %}" alt="user">
+                    <div class="info">
+                        <h3 class="c-black t-capitalize">john doe</h3>
+                        <span class="c-lightGray">
+                            <i class="fas fa-clock"></i>
+                            3 min ago
+                        </span>
+                    </div>
+                </div>
+                <i class="fas fa-ellipsis-v c-lightGray pointer fs-16"></i>
+            </div>
+            <div class="epic-sec">
+                <div class="details d-flex align-items-center">
+                    <div class="detail d-flex align-items-center">
+                        <img src="{% static 'Assects\Img\Profile\icon8.png' %}" alt="">
+                        <span class="c-lightGray t-capitalize">epic coder</span>
+                    </div>
+                    <div class="detail d-flex align-items-center">
+                        <img src="{% static 'Assects\Img\Profile\icon9.png' %}" alt="">
+                        <span class="c-lightGray t-capitalize">india</span>
+                    </div>
+                </div>
+                <div class="links d-flex align-items-center">
+                    <div class="link bg-green c-white b-rd-3 fs-20 pointer">
+                        <i class="far fa-bookmark t-c"></i>
+                    </div>
+                    <div class="link bg-red c-white b-rd-3 fs-20 pointer">
+                        <i class="far fa-envelope t-c"></i>
+                    </div>
+                </div>
+                <div class="job-desc">
+                    <h3 class="t-capitalize c-black fs-16">
+                        senior wordpress developer
+                    </h3>
+                    <div class="jod-det d-flex align-items-center">
+                        <a href="#" class="btn bg-blue c-white">full time</a>
+                        <span class="c-black fs-16">$30 / hr</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus
+                        hendrerit
+                        metus, ut ullamcorper quam finibus at. Etiam id magna sit amet...
+                        <a href="#" class="c-red">view more</a>
+                    </p>
+                    <ul class="skill-tags d-flex align-items-center flex-wrap-wrap">
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">HTML</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">PHP</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">CSS</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">JavaScript</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">Wordpress</a></li>
+                    </ul>
+                    <div class="job-status-bar">
+                        <ul>
+                            <li>
+                                <a href="#" class="t-capitalize c-lightGray fs-14">
+                                    <i class="fas fa-heart"></i>
+                                    like
+                                    <span>25</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="t-capitalize c-lightGray fs-14">
+                                    <i class="fas fa-comment-alt"></i>
+                                    comment
+                                    <span>15</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#" class="t-capitalize c-lightGray fs-14">
+                            <i class="fas fa-eye"></i>
+                            views 50
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box bg-white">
+        <div class="post-section">
+            <div class="post-topbar d-flex align-items-center justify-content-space-between">
+                <div class="user-info d-flex align-items-center">
+                    <img src="{% static 'Assects\Img\Profile\user-pic.png' %}" alt="user">
+                    <div class="info">
+                        <h3 class="c-black t-capitalize">john doe</h3>
+                        <span class="c-lightGray">
+                            <i class="fas fa-clock"></i>
+                            3 min ago
+                        </span>
+                    </div>
+                </div>
+                <i class="fas fa-ellipsis-v c-lightGray pointer fs-16"></i>
+            </div>
+            <div class="epic-sec">
+                <div class="details d-flex align-items-center">
+                    <div class="detail d-flex align-items-center">
+                        <img src="{% static 'Assects\Img\Profile\icon8.png' %}" alt="">
+                        <span class="c-lightGray t-capitalize">epic coder</span>
+                    </div>
+                    <div class="detail d-flex align-items-center">
+                        <img src="{% static 'Assects\Img\Profile\icon9.png' %}" alt="">
+                        <span class="c-lightGray t-capitalize">india</span>
+                    </div>
+                </div>
+                <div class="links d-flex align-items-center">
+                    <div class="link bg-green c-white b-rd-3 fs-20 pointer">
+                        <i class="far fa-bookmark t-c"></i>
+                    </div>
+                    <div class="link bg-red c-white b-rd-3 fs-20 pointer">
+                        <i class="far fa-envelope t-c"></i>
+                    </div>
+                    <a href="#" class="t-capitalize bg-blue c-white b-rd-3 bide">bid now</a>
+                </div>
+                <div class="job-desc">
+                    <h3 class="t-capitalize c-black fs-16">
+                        senior wordpress developer
+                    </h3>
+                    <div class="jod-det d-flex align-items-center">
+                        <a href="#" class="btn bg-blue c-white">full time</a>
+                        <span class="c-black fs-16">$30 / hr</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus
+                        hendrerit
+                        metus, ut ullamcorper quam finibus at. Etiam id magna sit amet...
+                        <a href="#" class="c-red">view more</a>
+                    </p>
+                    <ul class="skill-tags d-flex align-items-center flex-wrap-wrap">
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">HTML</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">PHP</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">CSS</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">JavaScript</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">Wordpress</a></li>
+                    </ul>
+                    <div class="job-status-bar">
+                        <ul>
+                            <li>
+                                <a href="#" class="t-capitalize c-lightGray fs-14">
+                                    <i class="fas fa-heart"></i>
+                                    like
+                                    <span>25</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="t-capitalize c-lightGray fs-14">
+                                    <i class="fas fa-comment-alt"></i>
+                                    comment
+                                    <span>15</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#" class="t-capitalize c-lightGray fs-14">
+                            <i class="fas fa-eye"></i>
+                            views 50
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box bg-white">
+        <div class="post-section">
+            <div class="post-topbar d-flex align-items-center justify-content-space-between">
+                <div class="user-info d-flex align-items-center">
+                    <img src="{% static 'Assects\Img\Profile\us-pc2.png' %}" alt="user">
+                    <div class="info">
+                        <h3 class="c-black t-capitalize">john doe</h3>
+                        <span class="c-lightGray">
+                            <i class="fas fa-clock"></i>
+                            3 min ago
+                        </span>
+                    </div>
+                </div>
+                <i class="fas fa-ellipsis-v c-lightGray pointer fs-16"></i>
+            </div>
+            <div class="epic-sec">
+                <div class="details d-flex align-items-center">
+                    <div class="detail d-flex align-items-center">
+                        <img src="{% static 'Assects\Img\Profile\icon8.png' %}" alt="">
+                        <span class="c-lightGray t-capitalize">epic coder</span>
+                    </div>
+                    <div class="detail d-flex align-items-center">
+                        <img src="{% static 'Assects\Img\Profile\icon9.png' %}" alt="">
+                        <span class="c-lightGray t-capitalize">india</span>
+                    </div>
+                </div>
+                <div class="links d-flex align-items-center">
+                    <div class="link bg-green c-white b-rd-3 fs-20 pointer">
+                        <i class="far fa-bookmark t-c"></i>
+                    </div>
+                    <div class="link bg-red c-white b-rd-3 fs-20 pointer">
+                        <i class="far fa-envelope t-c"></i>
+                    </div>
+                </div>
+                <div class="job-desc">
+                    <h3 class="t-capitalize c-black fs-16">
+                        senior wordpress developer
+                    </h3>
+                    <div class="jod-det d-flex align-items-center">
+                        <a href="#" class="btn bg-blue c-white">full time</a>
+                        <span class="c-black fs-16">$30 / hr</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus
+                        hendrerit
+                        metus, ut ullamcorper quam finibus at. Etiam id magna sit amet...
+                        <a href="#" class="c-red">view more</a>
+                    </p>
+                    <ul class="skill-tags d-flex align-items-center flex-wrap-wrap">
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">HTML</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">PHP</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">CSS</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">JavaScript</a></li>
+                        <li><a href="#" class="c-lightGray bg-gray fs-14">Wordpress</a></li>
+                    </ul>
+                    <div class="job-status-bar">
+                        <ul>
+                            <li>
+                                <a href="#" class="t-capitalize c-lightGray fs-14">
+                                    <i class="fas fa-heart"></i>
+                                    like
+                                    <span>25</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="t-capitalize c-lightGray fs-14">
+                                    <i class="fas fa-comment-alt"></i>
+                                    comment
+                                    <span>15</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#" class="t-capitalize c-lightGray fs-14">
+                            <i class="fas fa-eye"></i>
+                            views 50
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock profile_body %}

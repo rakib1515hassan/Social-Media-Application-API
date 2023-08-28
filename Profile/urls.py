@@ -7,7 +7,11 @@ from Profile.Views import api
 ## profile/
 urlpatterns = [
     ### NOTE Tamplate Render URL:-
-    path("profile/", views.Profiel.as_view(), name='profile'),
+    path("profile-post/",      views.Profiel_posts.as_view(),     name='Profiel_posts'),
+    path("profile-about/",     views.Profiel_about.as_view(),     name='Profiel_about'),
+    path("profile-followers/", views.Profiel_followers.as_view(), name='Profiel_followers'),
+    path("profile-following/", views.Profiel_following.as_view(), name='Profiel_following'),
+    path("profile-photo/",     views.Profiel_photo.as_view(),     name='Profiel_photo'),
 
 
 
