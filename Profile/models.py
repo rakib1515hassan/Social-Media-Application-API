@@ -47,12 +47,13 @@ class User_Social_Link(models.Model):
     id     = models.UUIDField( primary_key = True, unique = True, default = uuid.uuid4, editable = False )
     user   = models.OneToOneField( User, on_delete = models.CASCADE, related_name='user_social_link' )
 
-    portfolio = models.URLField( max_length=200, null = True, blank = True)
+    websit    = models.URLField( max_length=200, null = True, blank = True)
     git       = models.URLField( max_length=200, null = True, blank = True)
-    LinkedIn  = models.URLField( max_length=200, null = True, blank = True)
+    linkedIn  = models.URLField( max_length=200, null = True, blank = True)
     facebook  = models.URLField( max_length=200, null = True, blank = True)
     twitter   = models.URLField( max_length=200, null = True, blank = True)
     instagram = models.URLField( max_length=200, null = True, blank = True)
+    youtube   = models.URLField( max_length=200, null = True, blank = True)
     
     ## NOTE signals_section
     # def create_profile(sender, **kwargs):

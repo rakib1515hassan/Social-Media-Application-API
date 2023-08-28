@@ -4,17 +4,19 @@
 {% block css %} {% endblock css %}
 
 {% block body %}
-<section class="cover-sec p-relative w-100">
-    <img src="{% static 'Assects\Img\Profile\cover-img.jpg' %}" alt="cover" class="w-100">
-    <div class="add-pic-box w-100 p-absolute fs-16">
-        <div class="container">
-            <form action="#" class="d-flex">
-                <input type="file" id="file">
-                <label for="file" class="t-uppercase bg-white c-red b-rd-3 pointer">change image</label>
-            </form>
+<div class="container">
+    <section class="cover-sec p-relative">
+        <img id="cover_image" src="{% static 'Assects\Img\Profile\cover-img.jpg' %}" alt="cover" style="height: 350px;" width="100%">
+        <div class="add-pic-box w-100 p-absolute fs-16">
+            <div class="container">
+                <form action="#" class="d-flex">
+                    <input type="file" id="file">
+                    <label for="file" class="t-uppercase bg-white c-red b-rd-3 pointer">change image</label>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 <main>
     <div class="container">
         <div class="main-sec d-flex flex-d-column flex-d-l-row">
@@ -44,39 +46,46 @@
                         </div>
                         <ul class="social-links">
                             <li>
-                                <a href="#" class="w-100 c-blue fs-14 d-flex align-items-center">
+                                <a id="websit" href="#" class="w-100 c-blue fs-14 d-flex align-items-center" target="_blank">
                                     <i class="fs-20 fas fa-globe-europe"></i>
-                                    www.example.com
+                                    <span>https://www.web.com/...</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="w-100 c-blue fs-14 d-flex align-items-center">
+                                <a id="linkedin" href="#" class="w-100 c-blue fs-14 d-flex align-items-center" target="_blank">
+                                    <i class="fa fa-linkedin-square" aria-hidden="true" style="font-size: 20px;"></i>
+                                    <span>https://www.linkedin.com/...</span>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a id="facebook" href="#" class="w-100 c-blue fs-14 d-flex align-items-center" target="_blank">
                                     <i class="fs-20 fab fa-facebook-square"></i>
-                                    Http://www.facebook.com/john...
+                                    <span>https://www.facebook.com/...</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="w-100 c-blue fs-14 d-flex align-items-center">
+                                <a id="twitter" href="#" class="w-100 c-blue fs-14 d-flex align-items-center" target="_blank">
                                     <i class="fs-20 fab fa-twitter"></i>
-                                    Http://www.Twitter.com/john...
+                                    <span>https://www.twitter.com/...</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="w-100 c-blue fs-14 d-flex align-items-center">
-                                    <i class="fs-20 fab fa-google-plus-square"></i>
-                                    Http://www.googleplus.com/john...
+                                <a id="git" href="#" class="w-100 c-blue fs-14 d-flex align-items-center" target="_blank">
+                                    <i class="fa fa-github" aria-hidden="true" style="font-size: 20px;"></i>
+                                    <span>https://www.github.com/...</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="w-100 c-blue fs-14 d-flex align-items-center">
+                                <a id="instagram" href="#" class="w-100 c-blue fs-14 d-flex align-items-center" target="_blank">
                                     <i class="fs-20 fab fa-instagram"></i>
-                                    Http://www.instagram.com/john...
+                                    <span>https://www.instagram.com/...</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="w-100 c-blue fs-14 d-flex align-items-center">
+                                <a id="youtube" href="#" class="w-100 c-blue fs-14 d-flex align-items-center" target="_blank">
                                     <i class="fs-20 fab fa-youtube-square"></i>
-                                    Http://www.youtube.com/john...
+                                    <span>https://www.youtube.com/...</span>
                                 </a>
                             </li>
                         </ul>
@@ -473,23 +482,17 @@
             <div class="right">
                 <div class="box portfolio bg-white">
                     <div class="portfolio-head d-flex align-items-center justify-content-space-between">
-                        <h3 class="t-capitalize c-black">portfolio</h3>
+                        <h3 class="t-capitalize c-black">Picture</h3>
                         <img src="{% static 'Assects\Img\Profile\photo-icon.png' %}" alt="photo">
                     </div>
                     <div class="portfolio-body">
-                        <ul class="d-flex align-items-center flex-wrap-wrap">
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery1.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery2.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery3.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery4.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery5.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery6.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery1.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery2.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery3.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery4.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery5.png' %}" alt=""></a></li>
-                            <li><a href="#"><img src="{% static 'Assects\Img\Profile\pf-gallery6.png' %}" alt=""></a></li>
+                        <ul class="d-flex align-items-center flex-wrap-wrap" id="all_prfile_image">
+                            <!-- Images will be dynamically added here -->
+                            <!-- <li>
+                                <a href="#">
+                                    <img src="{% static 'Assects\Img\Profile\pf-gallery1.png' %}" alt="" width="70px" height="70px">
+                                </a>
+                            </li> -->
                         </ul>
                     </div>
                 </div>

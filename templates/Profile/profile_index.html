@@ -22,116 +22,118 @@
 </head>
 
 <body class="bg-gray">
-    <header class="bg-red" id="header">
-        <div class="container">
-            <div class="header-area d-m-flex justify-content-space-between">
-                <div class="header-top d-m-flex">
-                    <div class="logo t-c">
-                        <img src="{% static 'Assects/Img/Profile/logo.png' %}" alt="logo">
-                    </div>
-                    <div class="search-bar t-c">
-                        <form action="#" class="p-relative">
-                            <input type="text" name="search" placeholder="Search..."
-                                class="bg-white c-lightGray outline-0 b-0 b-rd-3 w-100">
-                            <button type="submit"
-                                class="bg-gray c-red outline-0 b-0 b-t-r-3 b-b-r-3 pointer p-absolute">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <nav class="bg-red p-xl-relative" id="navbar">
-                    <ul class="d-xl-flex">
-                        <li>
-                            <a href="{% url 'home' %}" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
-                                <i class="fas fa-home"></i>
-                                home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
-                                <i class="fas fa-building"></i>
-                                companies
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
-                                <i class="fas fa-puzzle-piece"></i>
-                                projects
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'profile' %}" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
-                                <i class="fas fa-users"></i>
-                                profiles
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
-                                <i class="fas fa-briefcase"></i>
-                                jobs
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
-                                <i class="fas fa-envelope"></i>
-                                messages
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
-                                <i class="far fa-bell"></i>
-                                notification
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="user-info d-flex align-items-center justify-content-space-between">
-                    <div class="info d-flex align-items-center">
-                        <img id="nav_pic" src="{% static 'Assects\Img\Profile\user-pic.png' %}" alt="user" onclick="toggleMenu()" style="height: 30px; width: 30px;">
-                        <!-- <span class="c-white">John</span> -->
-
-                        <div class="sub-menu-wrap" id="subMenu">
-                            <div class="sub-menu">
-                                <div class="user-info">
-                                    <img src="{% static 'Assects\Img\toggle\user.png' %}" alt="">
-                                    <h3>Md Rakib Hassan</h3>
-                                </div><hr>
-                
-                                <a href="#" class="sub-menu-link">
-                                    <img src="{% static 'Assects\Img\toggle\profile.png' %}" alt="">
-                                    <p>Edit Profile</p>
-                                    <!-- <span>></span> -->
-                                </a>
-                
-                                <a href="#" class="sub-menu-link">
-                                    <img src="{% static 'Assects\Img\toggle\setting.png' %}" alt="">
-                                    <p>Setting and Privacy</p>
-                                    <!-- <span>></span> -->
-                                </a>
-                
-                                <a href="#" class="sub-menu-link">
-                                    <img src="{% static 'Assects\Img\toggle\help.png' %}" alt="">
-                                    <p>Help and Support</p>
-                                    <!-- <span>></span> -->
-                                </a>
-                
-                                <a href="" id="logout_link" class="sub-menu-link">
-                                    <img src="{% static 'Assects\Img\toggle\profile.png' %}" alt="">
-                                    <p>Logout</p>
-                                    <!-- <span>></span> -->
-                                </a>
-                            </div>
+    <div class="container">
+        <header class="bg-red" id="header">
+            <div class="container">
+                <div class="header-area d-m-flex justify-content-space-between">
+                    <div class="header-top d-m-flex">
+                        <div class="logo t-c">
+                            <img src="{% static 'Assects/Img/Profile/logo.png' %}" alt="logo">
                         </div>
-
-
-
+                        <div class="search-bar t-c">
+                            <form action="#" class="p-relative">
+                                <input type="text" name="search" placeholder="Search..."
+                                    class="bg-white c-lightGray outline-0 b-0 b-rd-3 w-100">
+                                <button type="submit"
+                                    class="bg-gray c-red outline-0 b-0 b-t-r-3 b-b-r-3 pointer p-absolute">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
                     </div>
-                    <i class="fas fa-bars c-white pointer d-xl-none"></i>
+                    <nav class="bg-red p-xl-relative" id="navbar">
+                        <ul class="d-xl-flex">
+                            <li>
+                                <a href="{% url 'home' %}" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                    <i class="fas fa-home"></i>
+                                    home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                    <i class="fas fa-building"></i>
+                                    companies
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                    <i class="fas fa-puzzle-piece"></i>
+                                    projects
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'profile' %}" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                    <i class="fas fa-users"></i>
+                                    profiles
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                    <i class="fas fa-briefcase"></i>
+                                    jobs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                    <i class="fas fa-envelope"></i>
+                                    messages
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
+                                    <i class="far fa-bell"></i>
+                                    notification
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="user-info d-flex align-items-center justify-content-space-between">
+                        <div class="info d-flex align-items-center">
+                            <img id="nav_pic" src="{% static 'Assects\Img\Profile\user-pic.png' %}" alt="user" onclick="toggleMenu()" style="height: 30px; width: 30px; margin-right: 50px;">
+                            <!-- <span class="c-white">John</span> -->
+    
+                            <div class="sub-menu-wrap" id="subMenu">
+                                <div class="sub-menu">
+                                    <div class="user-info">
+                                        <img src="{% static 'Assects\Img\toggle\user.png' %}" alt="">
+                                        <h3>Md Rakib Hassan</h3>
+                                    </div><hr>
+                    
+                                    <a href="#" class="sub-menu-link">
+                                        <img src="{% static 'Assects\Img\toggle\profile.png' %}" alt="">
+                                        <p>Edit Profile</p>
+                                        <!-- <span>></span> -->
+                                    </a>
+                    
+                                    <a href="#" class="sub-menu-link">
+                                        <img src="{% static 'Assects\Img\toggle\setting.png' %}" alt="">
+                                        <p>Setting and Privacy</p>
+                                        <!-- <span>></span> -->
+                                    </a>
+                    
+                                    <a href="#" class="sub-menu-link">
+                                        <img src="{% static 'Assects\Img\toggle\help.png' %}" alt="">
+                                        <p>Help and Support</p>
+                                        <!-- <span>></span> -->
+                                    </a>
+                    
+                                    <a href="" id="logout_link" class="sub-menu-link">
+                                        <img src="{% static 'Assects\Img\toggle\profile.png' %}" alt="">
+                                        <p>Logout</p>
+                                        <!-- <span>></span> -->
+                                    </a>
+                                </div>
+                            </div>
+    
+    
+    
+                        </div>
+                        <i class="fas fa-bars c-white pointer d-xl-none"></i>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
+    </div>
     <div>
         {% block body %} 
 

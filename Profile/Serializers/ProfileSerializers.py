@@ -23,7 +23,7 @@ class User_Educationl_InfoSerializer(serializers.ModelSerializer):
 class User_Social_LinkSerializer(serializers.ModelSerializer):
     class Meta:
         model  = User_Social_Link
-        fields = ['id', 'portfolio', 'git', 'LinkedIn', 'facebook', 'twitter', 'instagram']
+        fields = ['id', 'websit', 'git', 'linkedIn', 'facebook', 'twitter', 'instagram', 'youtube']
 
 
 
