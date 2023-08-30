@@ -10,13 +10,23 @@ from Profile.models import (
     AddressType
 )
 
+@admin.register(User_Address)
+class UserAddressAdmin(admin.ModelAdmin):
+    list_display = ['id', 'user', 'address_type', 'sub_division', 'zip_code', 'cityANDstreet']
+
+
+@admin.register(AddressType)
+class UserAddressAdmin(admin.ModelAdmin):
+    list_display = ['id', 'a_type']
+
 
 # Register your models here.
-admin.site.register(User_Address)
+# admin.site.register(User_Address)
 admin.site.register(User_Educationl_Info)
 admin.site.register(User_Social_Link)
 admin.site.register(User_Working_Assets)
+
 admin.site.register(Division)
 admin.site.register(Sub_Division)
-admin.site.register(AddressType)
+# admin.site.register(AddressType)
 

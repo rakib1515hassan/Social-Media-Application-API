@@ -1151,15 +1151,15 @@ footer .footer-sec .container img {
 
 @media(min-width: 992px) {
     .main-sec .left {
-        flex-basis: calc(25% - 2rem);
+        flex-basis: calc(20% - 2rem);
     }
 
     .main-sec .middle {
-        flex-basis: calc(50% - 2rem);
+        flex-basis: calc(60% - 2rem);
     }
 
     .main-sec .right {
-        flex-basis: 25%;
+        flex-basis: 20%;
     }
 
     .main-sec .left .user-profile .social-links li a {

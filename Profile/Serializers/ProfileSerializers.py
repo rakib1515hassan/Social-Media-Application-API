@@ -2,14 +2,33 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 User = get_user_model()
 from Account.models import UserProfile_Pic
-from Profile.models import User_Address, User_Educationl_Info, User_Social_Link, User_Working_Assets
+from Profile.models import User_Address, User_Educationl_Info, User_Social_Link, User_Working_Assets, AddressType, Division, Sub_Division
 
 
-
-class User_AddressSerializer(serializers.ModelSerializer):
+class DivisionSerializer(serializers.ModelSerializer):
     class Meta:
-        model  = User_Address
-        fields = ['id', 'address_type', 'division', 'sub_division', 'zip_code', 'address']
+        model = Division
+        fields = ['id', 'name']
+
+class SubDivisionSerializer(serializers.ModelSerializer):
+    division = DivisionSerializer()
+
+    class Meta:
+        model = Sub_Division
+        fields = ['id', 'name', 'division']
+
+class AddressTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AddressType
+        fields = ['id', 'a_type']
+
+class UserAddressSerializer(serializers.ModelSerializer):
+    address_type = AddressTypeSerializer()
+    sub_division = SubDivisionSerializer()
+
+    class Meta:
+        model = User_Address
+        fields = ['id', 'address_type', 'sub_division', 'zip_code', 'cityANDstreet']
 
 
 
@@ -45,7 +64,7 @@ class UserProfilePicSerializer(serializers.ModelSerializer):
 
 class UserProfileSerializer_GET(serializers.ModelSerializer):
     userprofile_pic      = UserProfilePicSerializer(      many=True, read_only=True)
-    user_address         = User_AddressSerializer(        many=True, read_only=True)
+    user_address         = UserAddressSerializer(        many=True, read_only=True)
     user_educationl_info = User_Educationl_InfoSerializer(many=True, read_only=True)
     user_social_link     = User_Social_LinkSerializer(               read_only=True)
     user_working_assets  = User_Working_AssetsSerializer( many=True, read_only=True)

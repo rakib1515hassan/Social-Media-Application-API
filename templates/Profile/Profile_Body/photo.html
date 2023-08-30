@@ -5,6 +5,24 @@
 {% block profile_body %}
 <div class="product-feed-tab current" id="photo">
     <h1>This is photos page</h1>
+    <div class="right">
+        <div class="box portfolio bg-white">
+            <div class="portfolio-head d-flex align-items-center justify-content-space-between">
+                <h3 class="t-capitalize c-black">Picture</h3>
+                <img src="{% static 'Assects\Img\Profile\photo-icon.png' %}" alt="photo">
+            </div>
+            <div class="portfolio-body">
+                <ul class="d-flex align-items-center flex-wrap-wrap" id="all_prfile_image">
+                    <!-- Images will be dynamically added here -->
+                    <!-- <li>
+                        <a href="#">
+                            <img src="{% static 'Assects\Img\Profile\pf-gallery1.png' %}" alt="" width="70px" height="70px">
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
 

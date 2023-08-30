@@ -25,7 +25,8 @@
 </head>
 
 <body class="bg-gray">
-    <div class="container">
+    <!-- <div class="container"> -->
+    <div class="custom_container">
         <header class="bg-red" id="header">
             <div class="container">
                 <div class="header-area d-m-flex justify-content-space-between">
@@ -52,18 +53,18 @@
                                     home
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
                                     <i class="fas fa-building"></i>
                                     companies
                                 </a>
-                            </li>
-                            <li>
+                            </li> -->
+                            <!-- <li>
                                 <a href="#" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
                                     <i class="fas fa-puzzle-piece"></i>
                                     projects
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="{% url 'Profiel_posts' %}" class="t-capitalize c-white d-xl-flex flex-d-xl-column align-items-xl-center fs-14">
                                     <i class="fas fa-users"></i>
@@ -187,6 +188,8 @@
     <script src="{% static 'Assects\Js\token.js' %}" type="module"></script>
     <script src="{% static 'Assects\Js\Accounts\logout.js' %}" type="module"></script>
     <script src="{% static 'Assects\Js\Profile\profile_info_GET.js' %}" type="module"></script>
+
+
 
     <script>
         let subMenu = document.getElementById('subMenu');

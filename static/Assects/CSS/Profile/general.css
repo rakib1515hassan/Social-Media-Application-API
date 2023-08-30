@@ -409,7 +409,61 @@ p {
 
 
 /* Profile about font */
-.p_font_siz{
+.profile-table{
     font-family: 'Source Sans Pro', sans-serif; 
-    font-size: 17px;
+    font-size: 15px;
+}
+
+.info_button{ 
+    color: rgb(246, 248, 250); 
+    padding: 5px 30px;
+}
+
+.address-add{
+    margin: 30px 200px;
+    font-size: 20px;
+}
+
+@media (max-width: 1400px) {
+    .address-add {
+        margin: 20px 130px;
+    }
+  }
+
+/* Media query for medium-sized screens */
+@media (max-width: 768px) {
+    .address-add {
+        margin: 20px 130px;
+    }
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 480px) {
+    .address-add {
+        margin: 20px 50px;
+    }
+  }
+
+
+.form-control{
+    font-size: 15px;
+}
+.address-table{
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 15px;
+}
+
+.danger-custom{
+    background: rgb(221, 56, 56);
+    color: white;
+    padding: 1px 10px;
+}
+.warning-custom{
+    background: rgb(161, 31, 197);
+    color: white;
+    padding: 1px 10px;
+}
+
+.custom_container{
+    margin: 0 12px;
 }

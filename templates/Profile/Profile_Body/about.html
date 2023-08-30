@@ -4,50 +4,222 @@
 {% block p_about %} active {% endblock p_about %}
 {% block profile_body %}
 <div class="product-feed-tab current" id="about">
-    <div class="card">
-        <div class="card-header text-white" style="background: rgb(55, 63, 214);">
-          <h2 class="larger-font">
-            <i class="fa-solid fa-user mr-3"></i>
+
+
+  <div class="card" style="overflow: hidden;">
+    <div class="card-header text-white" style="background: rgb(123, 44, 221);">
+      <h2 style="font-size: medium;"><i class="fa-solid fa-user mr-3"></i>
+        Profile Information
+      </h2>
+    </div>
+    <div class="card-body profile-table">
+      <form id="profile-info-update">
+        <div id="alart_msg"></div>
+        {% csrf_token %}
+        <input type="hidden" id="user_id" value="">
+
+        <div class="form-group row">
+          <label for="email2" class="col-sm-3 col-form-label ">Email</label>
+          <div class="col-sm-6">
+            <input id="p_email" name="email" type="email" placeholder="email@example.com" readonly class="form-control">
+          </div>
+        </div>
+    
+        <div class="form-group row">
+          <label for="f_name" class="col-sm-3 col-form-label ">First Name</label>
+          <div class="col-sm-6">
+            <input id="p_firstname" name="f_name" type="text" placeholder="First Name" class="form-control">
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label for="l_name" class="col-sm-3 col-form-label ">Last Name</label>
+          <div class="col-sm-6">
+            <input id="p_lastname" name="l_name" type="text" placeholder="Last Name" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="phone" class="col-sm-3 col-form-label ">Phone Number</label>
+          <div class="col-sm-6">
+            <input id="p_phone" name="phone" type="text" placeholder="Phone Number" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="" class="col-sm-3 col-form-label ">Profession</label>
+          <div class="col-sm-6">
+            <input id="p_profetion" name="phone" type="text" placeholder="Profession" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="" class="col-sm-3 col-form-label ">Gender</label>
+          <div class="col-sm-6">
+            <select class="form-control" id="u_gender">
+              <option value="" disabled selected id="p_gender"></option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+          </select>
+          </div>
+        </div>
+    
+        <div class="form-group row" style="margin-bottom: 0;!important">
+          <label for="phone" class="col-sm-3 col-form-label "></label>
+          <div class="col-sm-6">
+            <p>Date Formate: YYYY-MM-DD</p>
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <label for="d_o_birth" class="col-sm-3 col-form-label ">Date Of Birth</label>
+          <div class="col-sm-6">
+            <input id="p_birth" name="d_o_birth" type="text" placeholder="Date Of Birth" class="form-control">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-sm info_button" style="background-color: #6c61e3;" >Update</button>
+  
+      </form>
+    </div>
+    
+  </div>
+
+    <!-- <div class="card mt-5">
+        <div class="card-header text-white" style="background: rgb(212, 39, 57);">
+          <h2 style="font-size: medium;"><i class="fa-solid fa-user mr-3"></i>
             Profile Information
           </h2>
         </div>
         <div class="card-body">
-          <table class="table table-striped">
+          <table class="table table-striped profile-table">
             <tbody>
               <tr>
-                <th class="p_font_siz" scope="row">First Name</th>
-                <td class="p_font_siz">Md Rakib</td>
+                <th scope="row">First Name</th>
+                <td id="p_firstname"></td>
               </tr>
               <tr>
-                <th class="p_font_siz"  scope="row">Last Name</th>
-                <td class="p_font_siz" >Hassan</td>
+                <th scope="row">Last Name</th>
+                <td id="p_lastname"></td>
               </tr>
               <tr>
-                <th class="p_font_siz"  scope="row">Email</th>
-                <td class="p_font_siz" >rakib@gmail.com</td>
+                <th scope="row">Gender</th>
+                <td id="p_gender"></td>
               </tr>
               <tr>
-                <th class="p_font_siz"  scope="row">Phone</th>
-                <td class="p_font_siz" >01515612682</td>
+                <th scope="row">Email</th>
+                <td id="p_email"></td>
               </tr>
               <tr>
-                <th class="p_font_siz"  scope="row">Date of Birth</th>
-                <td class="p_font_siz" >1995-10-20</td>
+                <th scope="row">Phone</th>
+                <td id="p_phone"></td>
               </tr>
               <tr>
-                <th class="p_font_siz"  scope="row">Profession</th>
-                <td class="p_font_siz" >Web Developer</td>
+                <th scope="row">Date of Birth</th>
+                <td id="p_birth"></td>
               </tr>
               <tr>
-                <th class="p_font_siz"  scope="row">Gender</th>
-                <td class="p_font_siz" >Male</td>
+                <th scope="row">Profession</th>
+                <td id="p_profetion"></td>
               </tr>
+              
             </tbody>
           </table>
-          <button class="btn btn-sm" style="background: rgb(217, 73, 73); color: aliceblue; padding: 8px 25px;">Edit</button>
+          <button class="btn btn-sm info_button" style="background-color: #6c61e3;" >Edit</button>
         </div>
+    </div> -->
+
+    <div class="card mt-5">
+      <div class="card-header text-white" style="background: rgb(139, 29, 203); padding: 7px;">
+        <h2 class="larger-font" style="font-size: medium;">
+          <i class="fa-solid fa-address-book mr-3"></i>Address Information
+        </h2>
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered address-table">
+          <thead>
+            <tr>
+              <th>Address Type</th>
+              <th>Division</th>
+              <th>Sub Division</th>
+              <th>Zipcode</th>
+              <th>Home/Road and Thana</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="address-table-body">
+            <!-- <tr>
+              <td>Home</td>
+              <td>Dhaka</td>
+              <td>Dhaka</td>
+              <td>1211</td>
+              <td>274 no house, College road, Kamrangirchar</td>
+              <td>
+                <button class="btn warning-custom">E</button>
+              </td>
+              <td>
+                <button class="btn danger-custom">X</button>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+
+
+        <form class="address-add" id="address-form" style="margin-top: 80px;">
+          <div>
+            <h1 class="text-center">
+              <b style="color: blue; font-family: Arial Black;" id="address-update">
+                Add Your Address
+              </b>
+            </h1>
+            <div id="address_alart_msg"></div>
+          </div>
+
+          <div class="form-group mt-5">
+            <label for="addressType">Address Type</label>
+            <select class="form-control" id="address_type" required>
+              <option value="" disabled selected>Select an Address Type</option>
+
+            </select>
+          </div>
+
+          <!-- ... your previous form code ... -->
+          <div class="form-group">
+              <label for="division">Division</label>
+              <select class="form-control" id="division" required>
+                  <option value="" disabled selected>Select a Division</option>
+                  <!-- Add your division options here -->
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="subDivision">District <span>(First select Division)</span></label>
+              <select class="form-control" id="subDivision" required>
+                  <option value="" disabled selected>Select a District</option>
+              </select>
+          </div>
+          <!-- ... rest of your form code ... -->
+
+          <div class="form-group">
+            <label for="zipcode" >Zipcode</label>
+            <input type="text" class="form-control" id="zipcode" placeholder="Enter Zipcode">
+          </div>
+          <div class="form-group">
+            <label for="area" >City and Strete</label>
+            <input type="text" class="form-control" id="area" placeholder="Enter Area" required>
+          </div>
+          <button type="submit" id="submit-button" class="btn info_button" style="background-color: rgb(7, 163, 33);">Add</button>
+        </form>
+
+
+      </div>
     </div>
 </div>
 
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="{% static 'Assects\Js\Profile\user_data_update.js' %}" type="module"></script>
+<script src="{% static 'Assects\Js\Profile\address.js' %}" type="module"></script>
 {% endblock profile_body %}

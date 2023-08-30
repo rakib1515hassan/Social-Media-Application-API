@@ -4,9 +4,9 @@
 {% block css %} {% endblock css %}
 
 {% block body %}
-<div class="container">
+<div class="custom_container">
     <section class="cover-sec p-relative">
-        <img id="cover_image" src="{% static 'Assects\Img\Profile\cover-img.jpg' %}" alt="cover" style="height: 300px; width: 100%; border-radius:5px">
+        <img id="cover_image" src="{% static 'Assects\Img\Profile\cover-img.jpg' %}" alt="cover" style="height: 350px; width: 100%; border-radius:5px">
         <div class="add-pic-box w-100 p-absolute fs-16">
             <div class="container">
                 <form action="#" class="d-flex" style="margin-right: 80px;">
@@ -18,7 +18,8 @@
     </section>
 </div>
 <main>
-    <div class="container">
+    <!-- <div class="container"> -->
+    <div class="custom_container">
         <div class="main-sec d-flex flex-d-column flex-d-l-row">
             <div class="left">
                 <div class="box box-1">
@@ -203,6 +204,12 @@
                                     <span class="t-capitalize fs-16">Photos</span>
                                 </a>
                             </li>
+                            <li data-tab="photo" class="{% block p_projects %} {% endblock p_projects %}">
+                                <a href="{% url 'Profiel_photo' %}" class="d-flex flex-d-column align-items-center c-lightGray fs-16">
+                                    <i class="fas fa-code fa-5x"></i>
+                                    <span class="t-capitalize fs-16">Projects</span>
+                                </a>
+                            </li>
                             
                             <li data-tab="following" class="{% block p_following %} {% endblock p_following %}">
                                 <a href="{% url 'Profiel_following' %}" class="d-flex flex-d-column align-items-center c-lightGray fs-16">
@@ -235,11 +242,6 @@
 
 
 
-
-
-
-
-
             <div class="right">
                 <div class="box portfolio bg-white">
                     <div class="portfolio-head d-flex align-items-center justify-content-space-between">
@@ -248,8 +250,8 @@
                     </div>
                     <div class="portfolio-body">
                         <ul class="d-flex align-items-center flex-wrap-wrap" id="all_prfile_image">
-                            <!-- Images will be dynamically added here -->
-                            <!-- <li>
+                            <!-- Images will be dynamically added here
+                            <li>
                                 <a href="#">
                                     <img src="{% static 'Assects\Img\Profile\pf-gallery1.png' %}" alt="" width="70px" height="70px">
                                 </a>

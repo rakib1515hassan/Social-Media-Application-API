@@ -12,12 +12,11 @@ class User_Address(models.Model):
     id       = models.UUIDField( primary_key = True, unique = True, default = uuid.uuid4, editable = False )
     user     = models.ForeignKey( User, on_delete = models.CASCADE, related_name='user_address' )
 
-    address_type = models.OneToOneField( "Profile.AddressType", verbose_name = ("AddressType"),  on_delete=models.CASCADE )
-    division     = models.ForeignKey(    "Profile.Division",    verbose_name = ("Division"),     on_delete=models.CASCADE )
-    sub_division = models.ForeignKey(    "Profile.Sub_Division",verbose_name = ("Sub_Division"), on_delete=models.CASCADE )
+    address_type = models.OneToOneField( "Profile.AddressType", verbose_name = ("AddressType"),  on_delete=models.CASCADE, related_name= 'addresstype')
+    sub_division = models.ForeignKey(    "Profile.Sub_Division",verbose_name = ("Sub_Division"), on_delete=models.CASCADE, related_name= 'sub_division' )
 
     zip_code     = models.CharField( max_length=12,     null = True, blank = True )
-    address      = models.CharField( max_length = 1024, null = True, blank = True )
+    cityANDstreet= models.CharField( max_length = 1024, null = True, blank = True )
 
     def __str__(self):
         return f"Email = {self.user.email}, Address Type = {self.address_type}"
@@ -103,11 +102,12 @@ class Division(models.Model):
 
 class Sub_Division(models.Model):
     id       = models.UUIDField( primary_key = True, unique = True, default = uuid.uuid4, editable = False )
-    division = models.ForeignKey( Division, on_delete=models.CASCADE )
+    division = models.ForeignKey( Division, on_delete=models.CASCADE, related_name='sub_division' )
 
     name     = models.CharField( max_length=50)
 
     def __str__(self):
-        return f"{self.division.name} => {self.name}"
+        # return f"{self.division.name} => {self.name}"
+        return self.name
     
 
